@@ -148,7 +148,7 @@ jobs:
     steps:
       - uses: pozil/auto-assign-issue@v2
         with:
-          assignees: snykart
+          assignees: Reministeah
           numOfAssignee: 1
 ```
 
