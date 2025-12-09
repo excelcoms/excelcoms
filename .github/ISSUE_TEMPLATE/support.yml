@@ -5,37 +5,33 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Description**
-        Please describe the issue in detail.
-
-  - type: input
-    id: steps_to_reproduce
-    attributes:
-      label: Steps to reproduce
-      description: List the steps to reproduce the issue
-      placeholder: "1. \n2. \n3."
-      required: false
-
-  - type: input
-    id: expected_behavior
-    attributes:
-      label: Expected behavior
-      description: Describe what you expected to happen
-      placeholder: ""
-      required: false
+        **Please provide the details of your support request or bug below.**
 
   - type: textarea
-    id: screenshots
+    id: description
     attributes:
-      label: Screenshots / Links
-      description: Provide screenshots or links if any
-      placeholder: ""
-      required: false
-
-  - type: input
+      label: Description
+      description: Describe your issue in detail
+      placeholder: "Explain the problem you are facing."
+  
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: List the steps to reproduce the issue
+      placeholder: "Step 1, Step 2, Step 3"
+  
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+      placeholder: "Describe what you expected"
+  
+  - type: textarea
     id: environment
     attributes:
       label: Environment
       description: Browser, OS, etc.
-      placeholder: ""
-      required: false
+      placeholder: "e.g., Chrome 120 on Windows 11"
+
