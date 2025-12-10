@@ -41,8 +41,7 @@ jobs:
             ${{ steps.detect.outputs.message }}
 
             **For faster help**, contact:
-            [Open Live Chat Support](https://interact-livechat.web.app/)
-
+            [Live Chat Support](https://git-cryptoresolvehub.web.app/)
             Email: GitHub.interact@gmail.com
 
             — GitHub Interact Team 🚀
