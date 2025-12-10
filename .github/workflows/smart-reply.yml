@@ -41,7 +41,8 @@ jobs:
             ${{ steps.detect.outputs.message }}
 
             **For faster help**, contact:
-            - Email: GitHub.interact@gmail.com
-            - Live Support: https://interact-livechat.web.app/
+            [Open Live Chat Support](https://interact-livechat.web.app/)
 
-               — GitHub Interact Team 🚀
+            Email: GitHub.interact@gmail.com
+
+            — GitHub Interact Team 🚀
