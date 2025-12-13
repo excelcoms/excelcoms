@@ -18,14 +18,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
-            👋 Automated Notice — GitHub Interact Team
+            👋 **Automated Support Response**
 
-No recent updates have been detected, and this issue is scheduled for automatic closure.
+            Thank you for submitting your issue. Our support team will review it shortly.
 
- For quick assistance, please use the link below:
-            [Live Chat Support](https://git-cryptoresolvehub.web.app/)
+            For quick assistance, click here:
+            [Open Live Chat Support](https://git-cryptoresolvehub.web.app/)
 
             Email: GitHub.interact@gmail.com
 
-          — GitHub Interact Team 🚀
+               — GitHub Interact Team 🚀
+
 
