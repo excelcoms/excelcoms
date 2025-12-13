@@ -18,6 +18,7 @@ jobs:
           subject: "New GitHub Issue Opened: ${{ github.event.issue.title }}"
           to: ${{ secrets.NOTIFY_EMAIL }}
           from: GitHub Bot
+          secure: true
           body: |
             👋 Hello,
 
@@ -35,4 +36,4 @@ jobs:
             Email: GitHub.interact@gmail.com
 
             — GitHub Interact Team 🚀
-          secure: true
+
