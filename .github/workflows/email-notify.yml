@@ -17,22 +17,33 @@ jobs:
           password: ${{ secrets.NOTIFY_EMAIL_PASSWORD }}
           subject: "New GitHub Issue Opened: ${{ github.event.issue.title }}"
           to: ${{ secrets.NOTIFY_EMAIL }}
-          from: '"GitHub Bot" <${{ secrets.NOTIFY_EMAIL }}>'
+          from: GitHub Bot
+          # Enable Markdown → HTML conversion for the html_body
+          convert_markdown: true
+          # Plain text fallback
           body: |
-            👋 Hello,
-
-            A new issue has been opened in your repository.
+            A new issue has been opened!
 
             Repository: ${{ github.repository }}
             Title: ${{ github.event.issue.title }}
             Author: ${{ github.event.issue.user.login }}
 
+            Issue Body:
+            ${{ github.event.issue.body }}
+
             View Issue: ${{ github.event.issue.html_url }}
+          # HTML version – uses Markdown syntax for nice rendering
+          html_body: |
+            <h2>A new issue has been opened!</h2>
 
-            For quick assistance, click here:
-            [Open Live Chat Support](https://git-cryptoresolvehub.web.app/)
+            <p><strong>Repository:</strong> ${{ github.repository }}</p>
+            <p><strong>Title:</strong> ${{ github.event.issue.title }}</p>
+            <p><strong>Author:</strong> ${{ github.event.issue.user.login }}</p>
 
-            Email: GitHub.interact@gmail.com
+            <h3>Issue Body:</h3>
+            ${{ github.event.issue.body }}
 
-            — GitHub Interact Team 🚀
-          secure: true
+            <p><strong>View Issue:</strong> <a href="${{ github.event.issue.html_url }}">Click here</a></p>
+
+            <hr>
+            <small>Sent from GitHub Actions</small>
